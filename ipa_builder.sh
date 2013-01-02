@@ -103,6 +103,7 @@ is_release()
 make_temp_plist()
 {
     strings $1 >$TEMP_FILE 2>/dev/null
+    # Fixing issue with garbage first char (if needed)
     local output=`strings $TEMP_FILE`
     if [ "${output:0:1}" != "<" ]; then
         output="${output:1:${#output}-1}"
@@ -227,6 +228,7 @@ if [ $SCHEME ]; then
         BUILD_DIR="$BUILD_DIR/Products"
     fi
 else
+    # Build dir will be created from scratch in project's folder
     clean
     echo "`tput setaf 2`ok`tput sgr0`"
 fi
