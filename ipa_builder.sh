@@ -205,7 +205,7 @@ if ! [ -d $PROJECT_PATH ] || [ -z `echo $PROJECT_PATH | grep xcodeproj` ]; then
 fi
 
 # Validating configuration
-CONFIG=`xcodebuild -project $PROJECT_PATH -list | grep -i $CONFIG | sed 's/^ *//g' | sed 's/ *$//g'`
+CONFIG=`xcodebuild -project $PROJECT_PATH -list | grep -m 1 -i $CONFIG | sed 's/^ *//g' | sed 's/ *$//g'`
 if [ -z $CONFIG ]; then
     fail "Specified configuration is not valid"
 else
