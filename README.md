@@ -8,7 +8,7 @@ Automated iOS App Builder and Distributor (via TestFlight)
 
 OPTIONS:
 
-  -c     : Build configuration (**required**), examples: *adhoc*, *distrib*  
+  -c     : Build configuration (required), examples: *adhoc*, *distrib*  
   -s     : Scheme to build (optional)  
   -t     : Target to build (optional)  
   
